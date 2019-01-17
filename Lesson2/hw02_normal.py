@@ -34,19 +34,19 @@ month_ = {'01': 'января', '02': 'февраля', '03': 'марта', '04'
 
 check_date = 0
 
-# while check_date == 0:
-#     input_date = input("Введите дату в формате ДД.ММ.ГГГГ - ").split('.')
-#     if int(input_date[0]) > 0 and int(input_date[0]) < 32:
-#         if int(input_date[1]) > 0 and int(input_date[1]) < 13:
-#             if int(input_date[2]) > 0 and int(input_date[2]) < 9999:
-#                 check_date = 1
-#                 print(days_[input_date[0]], month_[input_date[1]], input_date[2], 'года')
-#             else:
-#                 print("Не правильно ввели год")
-#         else:
-#             print("Не правильно ввели месяц")
-#     else:
-#         print("Не правильно ввели день")
+while check_date == 0:
+    input_date = input("Введите дату в формате ДД.ММ.ГГГГ - ").split('.')
+    if int(input_date[0]) > 0 and int(input_date[0]) < 32:
+        if int(input_date[1]) > 0 and int(input_date[1]) < 13:
+            if int(input_date[2]) > 0 and int(input_date[2]) < 9999:
+                check_date = 1
+                print(days_[input_date[0]], month_[input_date[1]], input_date[2], 'года')
+            else:
+                print("Не правильно ввели год")
+        else:
+            print("Не правильно ввели месяц")
+    else:
+        print("Не правильно ввели день")
 
 # Задача-3: Напишите ашлгоритм, заполняющий список произвольными целыми числами
 # в диапазоне от -100 до 100. В списке должно быть n - элементов.
