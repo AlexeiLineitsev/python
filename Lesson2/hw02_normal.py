@@ -10,7 +10,7 @@ list = [2, -5, 8, 9, -25, 25, 4]
 list_sqrt = []
 
 for i in list:
-    if i >= 0:
+    if i > 0:
         result_sqrt = math.sqrt(i)
         if float.is_integer(result_sqrt):
             list_sqrt.append(result_sqrt)
@@ -57,8 +57,8 @@ import random
 
 count = int(input("Желаемое число элементов - "))
 list = []
-i = 0
-for i in range(0, count):
+
+for i in range(count):
     list.append(random.randint(-100, 100))
 print(list)
 
