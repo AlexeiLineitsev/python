@@ -6,16 +6,16 @@
 
 
 def my_round(number, ndigits):
-    number = str(number).split('.')     #Делим строку по точке
-    number_round = int(number[1])       #Округляемое число
-    lenght = len(str(number[1]))        #Длина округляемого числа
+    number = str(number).split('.')     # Делим строку по точке
+    number_round = int(number[1])       # Округляемое число
+    lenght = len(str(number[1]))        # Длина округляемого числа
 
     for i in range(1, lenght+1):
         digits_number = number_round % 10
         number_round = int(number_round / 10)
 
         if i == lenght:
-            return (int(number[0])+1)           #В том случае если одни 9
+            return (int(number[0])+1)           # В том случае если одни 9
 
         if number_round%10 == 9:                # Если следующее число 9 пропускаем
             continue
@@ -40,15 +40,15 @@ print(my_round(2.9999967, 5))
 # !!!P.S.: функция не должна НИЧЕГО print'ить
 
 
-# def lucky_ticket(ticket_number):
-#     ticket_number = list(str(ticket_number))
-#     ticket_number = list(map(int,ticket_number))
-#     lenght = int(len(ticket_number))
-#     if lenght != 6:
-#         return 'Неверный номер билета'
-#     return 'Вы счастливчик' if sum(ticket_number[0:3]) == sum(ticket_number[3:6])  else 'Увы'
-#
-#
-# print(lucky_ticket(123006))
-# print(lucky_ticket(12321))
-# print(lucky_ticket(436751))
+def lucky_ticket(ticket_number):
+    ticket_number = list(str(ticket_number))
+    ticket_number = list(map(int,ticket_number))
+    lenght = int(len(ticket_number))
+    if lenght != 6:
+        return 'Неверный номер билета'
+    return 'Вы счастливчик' if sum(ticket_number[0:3]) == sum(ticket_number[3:6])  else 'Увы'
+
+
+print(lucky_ticket(123006))
+print(lucky_ticket(12321))
+print(lucky_ticket(436751))
