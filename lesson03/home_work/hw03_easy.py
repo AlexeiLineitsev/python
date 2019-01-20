@@ -5,27 +5,32 @@
 # Для решения задачи не используйте встроенные функции и функции из модуля math.
 
 
-# def my_round(number, ndigits):
-#     number = list(str(number))
-#     number.reverse()
-#     x = len(number)
-#     print(number)
-#
-#     # number.pop(0)
-#     # number.insert(0, -1)
-#
-#
-#     for x, i in enumerate(number):
-#         if i != '.':
-#             if int(i) >= 6:
-#                 print(number.pop(x))
-#                 number.insert(x,number.pop(x))
-#
-#
-#
-# print(my_round(2.1234567, 5))
-# print(my_round(2.1999967, 5))
-# print(my_round(2.9999967, 5))
+def my_round(number, ndigits):
+    number = str(number).split('.')     #Делим строку по точке
+    number_round = int(number[1])       #Округляемое число
+    lenght = len(str(number[1]))        #Длина округляемого числа
+
+    for i in range(1, lenght+1):
+        digits_number = number_round % 10
+        number_round = int(number_round / 10)
+
+        if i == lenght:
+            return (int(number[0])+1)           #В том случае если одни 9
+
+        if number_round%10 == 9:                # Если следующее число 9 пропускаем
+            continue
+
+        if digits_number > 6:
+            number_round = number_round + 1
+
+        if i >= lenght - ndigits:             # Проверяем до этого ли числа мы округляем
+            return '{}.{}'.format(number[0],number_round)
+            break
+
+
+print(my_round(2.1234567, 5))
+print(my_round(2.1999967, 5))
+print(my_round(2.9999967, 5))
 
 
 # Задание-2:
@@ -35,26 +40,15 @@
 # !!!P.S.: функция не должна НИЧЕГО print'ить
 
 
-def lucky_ticket(ticket_number):
-    ticket_number = list(str(ticket_number))
-    ticket_number = list(map(int,ticket_number))
-    lenght = int(len(ticket_number))
-
-    if lenght != 6:
-        return 'Неверный номер билета'
-
-    # if lenght%2 == 0:
-        lenght = int(len(ticket_number) / 2)
-        summa_first = sum(ticket_number[0:lenght])
-        summa_second = sum(ticket_number) - summa_first
-    # else:
-    #     lenght = int((len(ticket_number)-1) / 2)
-    #     summa_first = sum(ticket_number[0:lenght])
-    #     summa_second = sum(ticket_number[(lenght+1):lenght*2])
-
-    return 'Вы счастливчик' if summa_first == summa_second  else 'Увы'
-
-
-print(lucky_ticket(123006))
-print(lucky_ticket(12321))
-print(lucky_ticket(436751))
+# def lucky_ticket(ticket_number):
+#     ticket_number = list(str(ticket_number))
+#     ticket_number = list(map(int,ticket_number))
+#     lenght = int(len(ticket_number))
+#     if lenght != 6:
+#         return 'Неверный номер билета'
+#     return 'Вы счастливчик' if sum(ticket_number[0:3]) == sum(ticket_number[3:6])  else 'Увы'
+#
+#
+# print(lucky_ticket(123006))
+# print(lucky_ticket(12321))
+# print(lucky_ticket(436751))
