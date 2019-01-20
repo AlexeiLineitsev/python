@@ -3,8 +3,23 @@
 # Первыми элементами ряда считать цифры 1 1
 
 def fibonacci(n, m):
-    pass
+    fib_list = [1,1]
+    if n <= 0:
+        return 'Неверное n'
+    if n > m:
+        return 'Неверное m'
+    if n == 1 and m ==1:
+        return fib_list
 
+    for i in range(2,m-1):
+       number_f = fib_list[i-2] + fib_list[i-1]
+       fib_list.append(number_f)
+    fib_list = fib_list[n-1:m-1]
+    return fib_list
+
+
+print(fibonacci(1,1))
+print(fibonacci(6,15))
 # Задача-2:
 # Напишите функцию, сортирующую принимаемый список по возрастанию.
 # Для сортировки используйте любой алгоритм (например пузырьковый).
@@ -19,6 +34,7 @@ sort_to_max([2, 10, -12, 2.5, 20, -11, 4, 4, 0])
 # Задача-3:
 # Напишите собственную реализацию стандартной функции filter.
 # Разумеется, внутри нельзя использовать саму функцию filter.
+
 
 
 # Задача-4:
