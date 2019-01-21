@@ -10,31 +10,31 @@
 # Вывод: 1 1/3
 
 
-def delim_str(x):       # Функция разбиения на числитель и знаменатель
-    x_d = x.split('/')
-    x = [x_d[0], x_d[1]]
-    x = list(map(int, x))
-    return x
-
-
-
-x = '11/12'
-y = '1/13'
-z = []
-
-x = delim_str(x)    # x - числитель
-y = delim_str(y)    # y - знаменатель
-
-val_x = (x[0]*y[1]) + (x[1]*y[0])       # общий числитель
-val_y = (y[0] * y[1])*2                 # общий знаменатель
-
-if val_x > val_y:               # Если числитель больше знаменателя выделяем целую часть
-    z.append(val_x//val_y)
-    z.append(val_x%val_y)
-    z.append(val_y)
-    print(z[0], ' ', z[1], '/', z[2])
-else:
-    print(val_x, '/', val_y)
+# def delim_str(x):       # Функция разбиения на числитель и знаменатель
+#     x_d = x.split('/')
+#     x = [x_d[0], x_d[1]]
+#     x = list(map(int, x))
+#     return x
+#
+#
+#
+# x = '11/12'
+# y = '1/13'
+# z = []
+#
+# x = delim_str(x)    # x - числитель
+# y = delim_str(y)    # y - знаменатель
+#
+# val_x = (x[0]*y[1]) + (x[1]*y[0])       # общий числитель
+# val_y = (y[0] * y[1])*2                 # общий знаменатель
+#
+# if val_x > val_y:               # Если числитель больше знаменателя выделяем целую часть
+#     z.append(val_x//val_y)
+#     z.append(val_x%val_y)
+#     z.append(val_y)
+#     print(z[0], ' ', z[1], '/', z[2])
+# else:
+#     print(val_x, '/', val_y)
 
 
 
@@ -46,6 +46,21 @@ else:
 # то их ЗП уменьшается пропорционально, а за заждый час переработки
 # они получают удвоенную ЗП, пропорциональную норме.
 # Кол-во часов, которые были отработаны, указаны в файле "data/hours_of"
+
+import os
+
+path = 'C:\gigbrains-python\python\lesson03\home_work\data'
+path = os.path.join(path,'workers')
+f = open ( path , 'r' , encoding = 'UTF-8')
+f = f.readlines()
+print(f[0])
+print(f[1])
+
+
+
+
+
+
 
 
 
