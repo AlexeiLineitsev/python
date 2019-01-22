@@ -44,9 +44,9 @@ def lucky_ticket(ticket_number):
     ticket_number = list(str(ticket_number))
     ticket_number = list(map(int,ticket_number))
     lenght = int(len(ticket_number))
-    if lenght != 6:
-        return 'Неверный номер билета'
-    return 'Вы счастливчик' if sum(ticket_number[0:3]) == sum(ticket_number[3:6])  else 'Увы'
+    if lenght != 6 or lenght > 6:
+        return False
+    return True if sum(ticket_number[0:3]) == sum(ticket_number[3:6])  else False
 
 
 print(lucky_ticket(123006))
