@@ -4,6 +4,10 @@
 # Т.е. из строки "mtMmEZUOmcq" нужно получить ['mt', 'm', 'mcq']
 # Решить задачу двумя способами: с помощью re и без.
 
+import re
+
+pattern = r"^[^A-Z]+$"
+
 line = 'mtMmEZUOmcqWiryMQhhTxqKdSTKCYEJlEZCsGAMkgAYEOmHBSQsSUHKvSfbmxULaysmNO'\
        'GIPHpEMujalpPLNzRWXfwHQqwksrFeipEUlTLeclMwAoktKlfUBJHPsnawvjPhfgewVzK'\
        'TUfSYtBydXaVIpxWjNKgXANvIoumesCSSvjEGRJosUfuhRRDUuTQwLlJJJDdkVjfSAHqn'\
@@ -18,7 +22,33 @@ line = 'mtMmEZUOmcqWiryMQhhTxqKdSTKCYEJlEZCsGAMkgAYEOmHBSQsSUHKvSfbmxULaysmNO'\
        'UJmGYJZPpRBFNLkqigxFkrRAppYRXeSCBxbGvqHmlsSZMWSVQyzenWoGxyGPvbnhWHuXB'\
        'qHFjvihuNGEEFsfnMXTfptvIOlhKhyYwxLnqOsBdGvnuyEZIheApQGOXWeXoLWiDQNJFa'\
        'XiUWgsKQrDOeZoNlZNRvHnLgCmysUeKnVJXPFIzvdDyleXylnKBfLCjLHntltignbQoiQ'\
-       'zTYwZAiRwycdlHfyHNGmkNqSwXUrxGc'
+       'zTYwZAiRwycdlHfyHNGmkNqSwXUrxGcx'
+
+for i in line:
+       print(re.findall(pattern,i))
+
+
+
+
+
+
+
+
+
+
+# current_str = ''
+# line_list = []
+#
+# for i in line:
+#        if i.islower() == True:
+#               current_str = current_str + i
+#        else:
+#               if current_str != '':
+#                      line_list.append(current_str)
+#                      current_str = ''
+
+
+
 
 
 # Задание-2:
