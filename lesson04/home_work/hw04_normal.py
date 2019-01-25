@@ -95,7 +95,7 @@ N = 10 # Количество цифр
 my_file = open('my_file.txt','w')
 
 for i in range(N):
-       my_file.write(str(random.randint(0,9)))
+       my_file.write(str(random.randint(1,9)))
 
 my_file.close()
 
