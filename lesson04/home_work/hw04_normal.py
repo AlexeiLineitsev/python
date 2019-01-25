@@ -7,7 +7,7 @@
 
 import re
 
-pattern = r"^[^A-Z]+$"
+pattern = r"[a-z]+"
 
 line = 'mtMmEZUOmcqWiryMQhhTxqKdSTKCYEJlEZCsGAMkgAYEOmHBSQsSUHKvSfbmxULaysmNO'\
        'GIPHpEMujalpPLNzRWXfwHQqwksrFeipEUlTLeclMwAoktKlfUBJHPsnawvjPhfgewVzK'\
@@ -27,8 +27,7 @@ line = 'mtMmEZUOmcqWiryMQhhTxqKdSTKCYEJlEZCsGAMkgAYEOmHBSQsSUHKvSfbmxULaysmNO'\
 
 # 1 решение
 
-for i in line:
-       print(re.findall(pattern,i))
+print(re.findall(pattern,line))
 
 
 # 2 решение
@@ -44,7 +43,7 @@ for i in line:
                      line_list.append(current_str)
                      current_str = ''
 
-
+print(line_list)
 
 
 
@@ -73,7 +72,7 @@ line_2 = 'mtMmEZUOmcqWiryMQhhTxqKdSTKCYEJlEZCsGAMkgAYEOmHBSQsSUHKvSfbmxULaysm'\
        'oiQzTYwZAiRwycdlHfyHNGmkNqSwXUrxGC'
 
 
-pattern = '[a-z]{2}([A-Z]+)[A-Z]{2}'
+pattern = r'[a-z]{2}([A-Z]+)[A-Z]{2}'
 
 print(re.findall(pattern,line_2))
 
