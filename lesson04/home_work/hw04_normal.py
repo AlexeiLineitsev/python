@@ -6,7 +6,7 @@
 
 import re
 
-pattern = r"^[^A-Z]+$"
+pattern = r"[a-z]+"
 
 line = 'mtMmEZUOmcqWiryMQhhTxqKdSTKCYEJlEZCsGAMkgAYEOmHBSQsSUHKvSfbmxULaysmNO'\
        'GIPHpEMujalpPLNzRWXfwHQqwksrFeipEUlTLeclMwAoktKlfUBJHPsnawvjPhfgewVzK'\
@@ -75,9 +75,59 @@ line_2 = 'mtMmEZUOmcqWiryMQhhTxqKdSTKCYEJlEZCsGAMkgAYEOmHBSQsSUHKvSfbmxULaysm'\
        'JFaXiUWgsKQrDOeZoNlZNRvHnLgCmysUeKnVJXPFIzvdDyleXylnKBfLCjLHntltignbQ'\
        'oiQzTYwZAiRwycdlHfyHNGmkNqSwXUrxGC'
 
+
+pattern = r'[a-z]{2}([A-Z]+)[A-Z]{2}'
+
+print(re.findall(pattern,line_2))
+
 # Задание-3:
 # Напишите скрипт, заполняющий указанный файл (самостоятельно задайте имя файла)
 # произвольными целыми цифрами, в результате в файле должно быть
 # 2500-значное произвольное число.
 # Найдите и выведите самую длинную последовательность одинаковых цифр
 # в вышезаполненном файле.
+
+import os
+import random
+
+N = 10 # Количество цифр
+
+my_file = open('my_file.txt','w')
+
+for i in range(N):
+       my_file.write(str(random.randint(0,9)))
+
+my_file.close()
+
+path = 'C:\gigbrains-python\python\lesson04\home_work'
+path = os.path.join(path, 'my_file.txt')
+f = open(path, 'r', encoding='UTF-8')
+line_2 = f.readline()
+
+lmax = 1
+l = 1
+
+digit = ''           #
+digit_ = ''          # ^ Переменные для вывода длинной последовательности
+
+for i in range(1,N):
+    if line_2[i] == line_2[i-1]:
+        l += 1
+        digit = digit + line_2[i-1]
+    else:
+        if l > lmax:
+            lmax = l
+            digit_ = ''
+            digit_ = digit + line_2[i-1]
+        l = 1
+
+print(line_2)
+print(digit_)
+
+
+
+
+
+
+
+
