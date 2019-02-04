@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+Не#!/usr/bin/python3
 
 """
 == Лото ==
@@ -57,4 +57,4 @@
 модуль random: http://docs.python.org/3/library/random.html
 
 """
-
+Не успел сделать домашнее задание, уж очень оно сложное было. Можно попозже сдать?
